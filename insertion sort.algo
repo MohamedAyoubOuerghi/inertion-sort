@@ -1,0 +1,44 @@
+ALGORITHM tri
+    type tab=array_name : ARRAY_OF INTEGER[1..100]; 
+
+VAR
+    
+    PROCEDURE remplir(var t:tab,n:integer)
+    VAR
+      var i:integer
+    BEGIN
+      for i:=1 to n do 
+      write('donner t[',i,']');
+      read(t[i])
+    END
+    Procédure Tri_Insertion( VAR T: Tab, N: entier)
+    Var
+    i,j,aux,pos: Entier
+BEGIN
+FOR i := 2 to N Faire
+    pos  :=i -1
+    while  (pos >=1) AND (T[pos] >T[i]) do
+    pos := pos - 1;
+
+    pos:=pos + 1
+    aux :=T[i]
+    for j := (i-1) to pos [pas = -1] do /*décalage à droite*/
+    T[j+1]  :=T[j]
+  
+    T[pos]:=aux
+
+    end;
+        PROCEDURE affiche(n:integer,t:tab)
+        VAR
+           i:integer
+        BEGIN
+           for i:=1 to n do 
+     write (t[i]);
+        END
+BEGIN
+    write('donner n')
+    read (n)
+    remplir(n,t)
+    Tri_Insertion(t,n);
+    affiche(n,t)
+END
